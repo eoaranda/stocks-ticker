@@ -35,7 +35,7 @@ const isMarketOpen = () => {
   if (!holidays.isHoliday(today) && (time >= constant.MARKET_START_TIME && time <= constant.MARKET_END_TIME)) {
     marketStatus = true;
   }
-  return false;
+  return marketStatus;
 }
 
 const displayMarketStatus = () => {
