@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <!-- this is the HTML template -->
-    <script type="text/html" id="template">
-      {{#stocks}}
+    <script id="template" type="text/template">
       <div id="ticker-card" class="card bg-dark">
         <div>
           <div class="ticker-card-header">
@@ -32,11 +31,11 @@
           </div>
         </div>
       </div>
-      {{/stocks}}
     </script>
   </head>
   <body>
-    <marquee id="marquee"  direction="up" scrollamount="20" height="100%" behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
+    <div id="market-status"></div>
+    <marquee id="marquee"  direction="up" scrollamount="15" height="100%" behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
     </marquee>
     <script src="./view.js"></script>
   </body>

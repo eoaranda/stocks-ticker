@@ -18,6 +18,19 @@ body {
   width: 100%;
 }
 
+#market-status {
+  text-align: right;
+  padding:4px;
+}
+
+#market-status-day{
+  color:gold;
+}
+
+#market-status-night{
+  color:dodgerblue;
+}
+
 .card {
   margin-bottom: 0.2em;
   padding: 1em;
@@ -68,3 +81,4 @@ body {
 #marquee:hover {
   cursor: pointer;
 }
+

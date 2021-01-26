@@ -1,4 +1,3 @@
-const url = require("url");
 const path = require("path");
 const { app, BrowserWindow } = require("electron");
 const iconPath = path.join(__dirname, 'assets/icons/icon.png');
@@ -6,8 +5,10 @@ const iconPath = path.join(__dirname, 'assets/icons/icon.png');
 function createWindow() {
   const win = new BrowserWindow({
     titleBarStyle: 'hidden',
-    width: 1000,
-    height: 800,
+    width: 280,
+    height: 768,
+    minHeight: 500,
+    minWidth: 240,
     backgroundColor: '#303030',
     webPreferences: {
       nodeIntegration: true,
@@ -20,7 +21,7 @@ function createWindow() {
   win.loadFile("assets/view.html");
 
   // enable dev tools by default
-  win.webContents.openDevTools();
+  //win.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
