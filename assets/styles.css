@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "SubwayTicker";
+  src: url("fonts/SubwayTicker-q1Z5.ttf");
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #303030;
+  color: white;
+  padding: 5px;
+  font-family: "SubwayTicker", Fallback, sans-serif;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  margin-bottom: 0.2em;
+  padding: 1em;
+}
+
+.ticker-card-header {
+  height: 40px;
+  margin-bottom: 0.5em;
+  font-weight: bolder;
+}
+
+.leftColumn {
+  float: left;
+  width: 50%;
+}
+
+.stockName {
+  font-size: 1.5em;
+}
+
+.stock-up {
+  color: #1db753;
+}
+
+.difference {
+  padding-left: 0.5em;
+}
+
+.stock-down {
+  color: #f45b5b;
+}
+
+.ticker-card-footer {
+  height: 20px;
+}
+
+.alert-blink {
+  color: #ffc108;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#marquee:hover {
+  cursor: pointer;
+}

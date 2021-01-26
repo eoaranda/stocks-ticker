@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ticker</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <!-- this is the HTML template -->
+    <script type="text/html" id="template">
+      {{#stocks}}
+      <div id="ticker-card" class="card bg-dark">
+        <div>
+          <div class="ticker-card-header">
+            <div class="leftColumn">
+              <span class="stockName">{{name}}</span>
+            </div>
+            <span id="stockPrice">$ {{price}}</span>
+          </div>
+          <div class="ticker-card-footer">
+            <div class="{{style}}">
+              <i class="fa {{arrow}}" style="font-size: 24px"></i>&nbsp;
+              <span class="percent">{{percent}}</span>
+              <span class="difference">({{difference}})</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/stocks}}
+    </script>
+  </head>
+  <body>
+    <marquee id="marquee"  direction="up" scrollamount="20" height="100%" behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
+    </marquee>
+    <script src="./view.js"></script>
+  </body>
+</html>
