@@ -1,8 +1,10 @@
-# Electron Stocks-ticker
+# Electron Stocks-ticker (AS-IS)
 
 ## Project:
 
-This is my first electron App, maybe a little too late regarding on what is the future for electron. But I needed a very minimal vertical stocks ticker app.
+This is my first electron App, maybe a little too late regarding on what is the future for electron but I needed a very minimal vertical stocks ticker app. 
+
+Important note, the app comes AS-IS , also this was a weekend hack so expect some not tested edge cases.
 
 ## Modes
 
