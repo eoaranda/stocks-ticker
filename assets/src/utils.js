@@ -48,10 +48,11 @@ Quick function to calculate Percents
 */
 const calculateStockPercent = (currentPrice, previousPrice) => {
   let percent = ((currentPrice - previousPrice) / previousPrice) * 100;
-  let alert = Math.abs(percent) >= 2 ? true : false;
-  let arrow = percent > 0 ? "fa-angle-up" : "fa-angle-down";
-  let style = percent > 0 ? "stock-up" : "stock-down";
-  style += alert ? ' alert-blink' : '';
+  let alert = Math.abs(percent) >= constant.BLINK_ALERT_THRESHOLD ? true : false;
+  let stockDirection = percent > 0 ? 'up' : 'down';
+  let arrow = "fa-angle-" + stockDirection;
+  let style = "stock-" + stockDirection;
+  style += alert ? ' alert-blink-'+stockDirection : '';
   return { percentValue: percent, percentText: percent.toFixed(2) + "%", arrow: arrow, style: style };
 };
 

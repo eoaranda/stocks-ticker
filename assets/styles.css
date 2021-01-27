@@ -67,7 +67,11 @@ body {
   height: 20px;
 }
 
-.alert-blink {
+.alert-blink-up {
+  animation: blinker 1s linear infinite;
+}
+
+.alert-blink-down {
   color: #ffc108;
   animation: blinker 1s linear infinite;
 }
