@@ -10,7 +10,6 @@ const socket = new WebSocket("wss://ws.finnhub.io?token=" + constant.API_TOKEN);
 Process api stocks and generate stock Object
 */
 const getQuoteForStocks = async () => {
-    console.log("get quote dat amanuallt");
     let stocks = constant.STOCKS;
     let quoteData;
     try {

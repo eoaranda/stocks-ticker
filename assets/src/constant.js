@@ -4,8 +4,8 @@ const STOCKS = process.env.STOCKS.split(",").sort();
 const API_TOKEN = process.env.API_TOKEN;
 const ONE_SECOND = 1000;
 const ONE_MINUTE = ONE_SECOND * 60;
-const MARKET_START_TIME = "09:30:00"; // 9:30am EST
-const MARKET_END_TIME = "16:00:00"; // 4pm EST ~ 16:00
+const MARKET_START_TIME = "09:00:00"; // EST
+const MARKET_END_TIME = "16:30:00"; // EST
 const PULL_TIME_LIMIT = ONE_MINUTE * 30;
 
 module.exports = {
