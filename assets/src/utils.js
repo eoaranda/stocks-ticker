@@ -46,8 +46,8 @@ const displayMarketStatus = () => {
 /**
 Quick function to calculate Percents
 */
-const calculateStockPercent = (currentPrice, openPrice) => {
-  let percent = ((currentPrice - openPrice) / openPrice) * 100;
+const calculateStockPercent = (currentPrice, previousPrice) => {
+  let percent = ((currentPrice - previousPrice) / previousPrice) * 100;
   let alert = Math.abs(percent) >= 2 ? true : false;
   let arrow = percent > 0 ? "fa-angle-up" : "fa-angle-down";
   let style = percent > 0 ? "stock-up" : "stock-down";
@@ -65,13 +65,13 @@ const displayTickers = (stocksData) => {
 /**
  * Main function to build the Stocks Object that will get populated in the view
  */
-const buildQuoteData = (symbol, currentPrice, openPrice) => {
-  let stockPercentData = calculateStockPercent(currentPrice, openPrice);
+const buildQuoteData = (symbol, currentPrice, previousPrice) => {
+  let stockPercentData = calculateStockPercent(currentPrice, previousPrice);
   const stocksObject = {
     name: cleanSymbol(symbol),
-    openPrice: openPrice,
+    previousClosePrice: previousPrice,
     price: parseFloat((currentPrice).toFixed(2)).toLocaleString('en'),
-    difference: parseFloat((currentPrice - openPrice).toFixed(2)).toLocaleString('en'),
+    difference: parseFloat((currentPrice - previousPrice).toFixed(2)).toLocaleString('en'),
     percent: stockPercentData.percentText,
     arrow: stockPercentData.arrow,
     style: stockPercentData.style

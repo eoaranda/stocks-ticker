@@ -29,7 +29,7 @@ const getQuoteForStocks = async () => {
 const getSymbolQuoteData = async (symbol) => {
     let response = await fetch("https://finnhub.io/api/v1/quote?symbol=" + symbol + "&token=" + constant.API_TOKEN);
     let data = await response.json();
-    return utils.buildQuoteData(symbol, data.c, data.o);
+    return utils.buildQuoteData(symbol, data.c, data.pc);
 };
 
 /**
@@ -57,7 +57,7 @@ const ListenWebSocket = () => {
         }
 
         let previousStock = data.STOCKS_DATA_OBJECT[latestStock.s];
-        let newStock = utils.buildQuoteData(latestStock.s, latestStock.p, previousStock.openPrice);
+        let newStock = utils.buildQuoteData(latestStock.s, latestStock.p, previousStock.previousClosePrice);
 
         if (previousStock.price != newStock.price) {
             data.STOCKS_DATA_OBJECT[latestStock.s] = newStock;
