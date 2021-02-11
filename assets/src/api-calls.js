@@ -57,11 +57,13 @@ const ListenWebSocket = () => {
         }
 
         let previousStock = data.STOCKS_DATA_OBJECT[latestStock.s];
-        let newStock = utils.buildQuoteData(latestStock.s, latestStock.p, previousStock.previousClosePrice);
+        if (typeof previousStock !== 'undefined') {
+            let newStock = utils.buildQuoteData(latestStock.s, latestStock.p, previousStock.previousClosePrice);
 
-        if (previousStock.price != newStock.price) {
-            data.STOCKS_DATA_OBJECT[latestStock.s] = newStock;
-            utils.displayTickers(data.STOCKS_DATA_OBJECT);
+            if (previousStock.price != newStock.price) {
+                data.STOCKS_DATA_OBJECT[latestStock.s] = newStock;
+                utils.displayTickers(data.STOCKS_DATA_OBJECT);
+            }
         }
     });
 }

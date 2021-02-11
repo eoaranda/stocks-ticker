@@ -43,6 +43,11 @@ const displayMarketStatus = () => {
   document.getElementById("market-status").innerHTML = statusIcon;
 }
 
+const setMarqueeConfigurations = (speed) => {
+  speed = speed !== undefined ? speed : 5;
+  document.getElementById("marquee").setAttribute("scrollamount", speed);
+}
+
 /**
 Quick function to calculate Percents
 */
@@ -86,5 +91,6 @@ module.exports = {
   displayTickers: displayTickers,
   buildQuoteData: buildQuoteData,
   displayMarketStatus: displayMarketStatus,
-  isMarketOpen: isMarketOpen
+  isMarketOpen: isMarketOpen,
+  setMarqueeConfigurations: setMarqueeConfigurations
 };

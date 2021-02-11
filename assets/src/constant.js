@@ -2,6 +2,7 @@ const dotenv = require("dotenv").config();
 
 const STOCKS = process.env.STOCKS.split(",").sort();
 const API_TOKEN = process.env.API_TOKEN;
+const SPEED_DELAY = process.env.SPEED_DELAY;
 const ONE_SECOND = 1000;
 const ONE_MINUTE = ONE_SECOND * 60;
 const MARKET_START_TIME = "09:00:00"; // EST
@@ -17,5 +18,6 @@ module.exports = {
   MARKET_START_TIME: MARKET_START_TIME,
   MARKET_END_TIME: MARKET_END_TIME,
   PULL_TIME_LIMIT: PULL_TIME_LIMIT,
-  BLINK_ALERT_THRESHOLD: BLINK_ALERT_THRESHOLD
+  BLINK_ALERT_THRESHOLD: BLINK_ALERT_THRESHOLD,
+  SPEED_DELAY: SPEED_DELAY
 };

@@ -48,10 +48,15 @@ const TimeTask = () => {
     }
 }
 
+const setUI = () => {
+    utils.setMarqueeConfigurations(constant.SPEED_DELAY);
+}
+
 /**
  * Init
  */
 (async function () {
+    setUI();
     setInterval(TimeTask, constant.ONE_SECOND * 15);
     Init();
 })();
