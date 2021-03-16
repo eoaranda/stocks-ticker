@@ -1,4 +1,3 @@
-const $ = require("jquery");
 const api = require('./src/api-calls');
 const constant = require('./src/constant');
 const utils = require('./src/utils');
