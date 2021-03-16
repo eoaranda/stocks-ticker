@@ -4,4 +4,3 @@ node_modules
 .pk
 .pem
 .pub
-.env
