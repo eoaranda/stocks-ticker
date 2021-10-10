@@ -15,7 +15,7 @@
     "electron": "^11.2.1",
     "node-fetch": "^2.6.1",
     "trim-newlines": ">=3.0.1",
-    "xmldom": "^0.6.1"
+    "xmldom": ">=0.6.0"
   },
   "devDependencies": {
     "electron-packager": "^9.1.0"
